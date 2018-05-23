@@ -38,14 +38,14 @@ public class JsonUtils {
 
         try {
             sandwichDataJsonObj = new JSONObject(json);
-            sandwichNameJsonObj = sandwichDataJsonObj.getJSONObject(NAME);
+            sandwichNameJsonObj = sandwichDataJsonObj.optJSONObject(NAME);
 
-            mainName = sandwichNameJsonObj.getString(MAIN_NAME);
-            alsoKnowAs =  createListFromJsonArray(sandwichNameJsonObj.getJSONArray(ALSO_KNOWN_AS));
-            placeOfOrigin = sandwichDataJsonObj.getString(PLACE_OF_ORIGIN);
-            descriptions = sandwichDataJsonObj.getString(DESCRIPTION);
-            image = sandwichDataJsonObj.getString(ITEM_IMAGE);
-            ingredients = createListFromJsonArray(sandwichDataJsonObj.getJSONArray(INGREDIENTS));
+            mainName = sandwichNameJsonObj.optString(MAIN_NAME);
+            alsoKnowAs =  createListFromJsonArray(sandwichNameJsonObj.optJSONArray(ALSO_KNOWN_AS));
+            placeOfOrigin = sandwichDataJsonObj.optString(PLACE_OF_ORIGIN);
+            descriptions = sandwichDataJsonObj.optString(DESCRIPTION);
+            image = sandwichDataJsonObj.optString(ITEM_IMAGE);
+            ingredients = createListFromJsonArray(sandwichDataJsonObj.optJSONArray(INGREDIENTS));
 
         }catch (JSONException e){
             e.printStackTrace();
@@ -64,7 +64,7 @@ public class JsonUtils {
 
         List<String> list = new ArrayList<>();
         for (int i = 0; i < jsonArray.length(); i++){
-            list.add(jsonArray.getString(i));
+            list.add(jsonArray.optString(i));
         }
         return list;
     }
