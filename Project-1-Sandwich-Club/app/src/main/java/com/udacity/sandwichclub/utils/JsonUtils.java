@@ -41,14 +41,15 @@ public class JsonUtils {
             sandwichNameJsonObj = sandwichDataJsonObj.optJSONObject(NAME);
 
             mainName = sandwichNameJsonObj.optString(MAIN_NAME);
-            alsoKnowAs =  createListFromJsonArray(sandwichNameJsonObj.optJSONArray(ALSO_KNOWN_AS));
+            alsoKnowAs = createListFromJsonArray(sandwichNameJsonObj.optJSONArray(ALSO_KNOWN_AS));
             placeOfOrigin = sandwichDataJsonObj.optString(PLACE_OF_ORIGIN);
             descriptions = sandwichDataJsonObj.optString(DESCRIPTION);
             image = sandwichDataJsonObj.optString(ITEM_IMAGE);
             ingredients = createListFromJsonArray(sandwichDataJsonObj.optJSONArray(INGREDIENTS));
 
-        }catch (JSONException e){
+        } catch (JSONException e) {
             e.printStackTrace();
+            return null;
         }
 
         return new Sandwich(mainName,
@@ -63,7 +64,7 @@ public class JsonUtils {
     private static List<String> createListFromJsonArray(JSONArray jsonArray) throws JSONException {
 
         List<String> list = new ArrayList<>();
-        for (int i = 0; i < jsonArray.length(); i++){
+        for (int i = 0; i < jsonArray.length(); i++) {
             list.add(jsonArray.optString(i));
         }
         return list;

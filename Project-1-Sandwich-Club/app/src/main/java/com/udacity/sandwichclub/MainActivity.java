@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_names);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, sandwiches){
+                android.R.layout.simple_list_item_1, sandwiches) {
 
             @NonNull
             @Override
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView tv = view.findViewById(android.R.id.text1);
 
                 // Set properties for each ListView item like size, textcolor, caps
-                tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP,22);
+                tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22);
                 tv.setAllCaps(true);
                 tv.setTextColor(Color.rgb(15, 6, 6));
 

@@ -16,6 +16,18 @@
     <!--No Image-->
     <string name="no_image_error">No Image</string>
 
+    <!--place of origin unknown-->
+    <string name="place_of_origin_unknown">Unknown.</string>
+
+    <!--no description-->
+    <string name="no_description">Description Unavailable</string>
+
+    <!--No alternative name-->
+    <string name="no_alternative_name">"No alternative name"</string>
+
+    <!--Ingredients not found-->
+    <string name="no_ingredients">Ingredients not found</string>
+
     <string-array name="sandwich_names">
         <item>Ham and cheese sandwich</item>
         <item>Bosna</item>

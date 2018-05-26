@@ -75,33 +75,37 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI() {
         //place of origin
-        if (sandwich.getPlaceOfOrigin() != null && !sandwich.getPlaceOfOrigin().isEmpty()){
+        if (sandwich.getPlaceOfOrigin() != null && !sandwich.getPlaceOfOrigin().isEmpty()) {
             mPlaceOfOriginLabelTextView.append(" " + sandwich.getPlaceOfOrigin());
-        }else {
-            mPlaceOfOriginLabelTextView.append(" Not found.");
+        } else {
+            mPlaceOfOriginLabelTextView.append(" " +
+                    getResources().getString(R.string.place_of_origin_unknown));
         }
 
         //description
-        if (sandwich.getDescription() != null && !sandwich.getDescription().isEmpty()){
+        if (sandwich.getDescription() != null && !sandwich.getDescription().isEmpty()) {
             mItemDescriptionTextView.append(" " + sandwich.getDescription());
-        }else {
-            mItemDescriptionTextView.append(" No description found.");
+        } else {
+            mItemDescriptionTextView.append(" " +
+                    getResources().getString(R.string.no_description));
         }
 
         //also known as
-        if (sandwich.getAlsoKnownAs() != null && sandwich.getAlsoKnownAs().size() > 0){
-                mItemAlsoKnowAsTextView.append(" " +
-                        TextUtils.join(", ", sandwich.getAlsoKnownAs()));
-        }else {
-            mItemAlsoKnowAsTextView.append(" No alternative name.");
+        if (sandwich.getAlsoKnownAs() != null && sandwich.getAlsoKnownAs().size() > 0) {
+            mItemAlsoKnowAsTextView.append(" " +
+                    TextUtils.join(", ", sandwich.getAlsoKnownAs()));
+        } else {
+            mItemAlsoKnowAsTextView.append(" " +
+                    getResources().getString(R.string.no_alternative_name));
         }
 
         //ingredients
-        if (sandwich.getIngredients() != null && sandwich.getIngredients().size() > 0){
-                mItemIngredientsTextView.append(" " +
-                        TextUtils.join(", ", sandwich.getIngredients()));
-        }else {
-            mItemIngredientsTextView.append(" Ingredients not found.");
+        if (sandwich.getIngredients() != null && sandwich.getIngredients().size() > 0) {
+            mItemIngredientsTextView.append(" " +
+                    TextUtils.join(", ", sandwich.getIngredients()));
+        } else {
+            mItemIngredientsTextView.append(" " +
+                    getResources().getString(R.string.no_ingredients));
         }
     }
 }
