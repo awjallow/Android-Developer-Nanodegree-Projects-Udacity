@@ -15,12 +15,13 @@ import com.udacity.sandwichclub.utils.JsonUtils;
 
 public class DetailActivity extends AppCompatActivity {
 
+    private static final String LOG = DetailActivity.class.getSimpleName();
+
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
     private Sandwich sandwich;
 
-    private ImageView mItemImageView;
     private TextView mItemAlsoKnowAsTextView;
     private TextView mItemIngredientsTextView;
     private TextView mPlaceOfOriginLabelTextView;
@@ -31,7 +32,7 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        mItemImageView = findViewById(R.id.image_iv);
+        ImageView mItemImageView = findViewById(R.id.image_iv);
         mItemAlsoKnowAsTextView = findViewById(R.id.also_known_as_label_tv);
         mItemIngredientsTextView = findViewById(R.id.ingredients_label_tv);
         mPlaceOfOriginLabelTextView = findViewById(R.id.place_of_origin_label_tv);
